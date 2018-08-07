@@ -1,0 +1,27 @@
+spring:
+  application:
+    name: api-gateway
+  cloud:
+    gateway:
+      discovery:
+        locator:
+          enabled: false
+      routes:
+      - id: 163
+        uri: http://www.163.com/
+        predicates:
+          - Path=/163/**
+
+server:
+  port: 8040
+
+#security:
+#  oauth2:
+#    client:
+#      clientId: client
+#      clientSecret: client-secret
+#    resource:
+#      token-info-uri: http://localhost:4040/oauth/check_token
+#      prefer-token-info: true
+#      jwt:
+#        key-uri: http://localhost:4040/oauth/token_key
